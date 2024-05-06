@@ -1,0 +1,93 @@
+let name = "Manigandaprabu", age = 24, email = "examplemail@gmail.com", phone = ["1234567890", "0987654321"];
+let workSummary = "I'm an Unix engineer and I do basic level server and application support. I also have some expierence in SCOM console."
+let resume = {
+    personalInfo: {
+        name, 
+        age,
+        contact: {
+            phone,
+            email
+        }
+    },
+    education: {
+        school: {
+            sslc: {
+                name: "Little Jacky Matriculation School",
+                year: 2015,
+                place: "Chengalpattu",
+                percentage: 84
+            },
+            hsc: {
+                name: "Ramakrishna Mission Boys Higher Secondary School",
+                year: 2017,
+                place: "Chengalpattu",
+                percentage: 65.25
+            }
+        },
+        College: {
+            name: "Prince Shri Venkateshwara Arts And Science College",
+            course: "BCA",
+            year: 2020,
+            place: "Gowrivakkam",
+            percentage: 74
+        }
+    },
+    work: {
+        company: "Infosys",
+        expierence: "3 Years",
+        Designation: "System Engineer",
+        skill: "java",
+        workSummary
+    }
+}
+
+for(let i in resume){
+    if(typeof(resume[i])==="object")
+    {
+        let root = resume[i];
+        console.log(i+":-")
+        for(let j in root)
+        {
+            if(typeof(root[j])==="string" || typeof(root[j])==="number")
+            {
+                console.log(`${j}: ${root[j]}`)
+            }
+            else if(typeof(root[j])==="object")
+            {
+                let root1 = root[j];
+                console.log(j+":-");
+                for(let k in root1)
+                {
+                    if(Array.isArray(root1[k]))
+                    {
+                        console.log(k+":-");
+                        for(let l of root1[k])
+                        {
+                            console.log(l);
+                        }
+                    }
+                    else if(typeof(root1[k])==="string" || typeof(root1[k])==="number")
+                    {
+                        console.log(`${k}: ${root1[k]}`);
+                    }
+                    else if(typeof(root1[k])==="object")
+                    {
+                        console.log(j+":-");
+                        let root2 = root1[k];
+                        console.log(k+":-")
+                        if(typeof(root1[k])==="object")
+                        {
+                            for(let q in root2)
+                            {
+                                if(typeof(root2[q])==="string" || typeof(root2[q])==="number")
+                                {
+                                    console.log(`${q}: ${root2[q]}`)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
