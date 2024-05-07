@@ -72,7 +72,7 @@ for(let i in resume){
                     }
                     else if(typeof(root1[k])==="object")
                     {
-                        console.log(j+":-");
+                        // console.log(j+":-");
                         let root2 = root1[k];
                         console.log(k+":-")
                         if(typeof(root1[k])==="object")
