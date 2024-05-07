@@ -1,7 +1,7 @@
 let name = "Manigandaprabu", age = 24, email = "examplemail@gmail.com", phone = ["1234567890", "0987654321"];
 let workSummary = "I'm an Unix engineer and I do basic level server and application support. I also have some expierence in SCOM console."
 let resume = {
-    personalInfo: {
+    PersonalInfo: {
         name, 
         age,
         contact: {
@@ -9,15 +9,15 @@ let resume = {
             email
         }
     },
-    education: {
-        school: {
-            sslc: {
+    Education: {
+        School: {
+            SSLC: {
                 name: "Little Jacky Matriculation School",
                 year: 2015,
                 place: "Chengalpattu",
                 percentage: 84
             },
-            hsc: {
+            HSC: {
                 name: "Ramakrishna Mission Boys Higher Secondary School",
                 year: 2017,
                 place: "Chengalpattu",
@@ -32,7 +32,7 @@ let resume = {
             percentage: 74
         }
     },
-    work: {
+    Work: {
         company: "Infosys",
         expierence: "3 Years",
         Designation: "System Engineer",
@@ -61,9 +61,13 @@ for(let i in resume){
                     if(Array.isArray(root1[k]))
                     {
                         console.log(k+":-");
-                        for(let l of root1[k])
+                        // for(let l of root1[k])
+                        // {
+                        //     console.log(l);
+                        // }
+                        for(let l=0; l<root1[k].length; l++)
                         {
-                            console.log(l);
+                            console.log(root1[k][l]);
                         }
                     }
                     else if(typeof(root1[k])==="string" || typeof(root1[k])==="number")
